@@ -1,0 +1,33 @@
+{
+    "name": "@vps-deckhand/vps-deckhand",
+    "version": "0.0.3",
+    "description": "vps-deckhand is a simple CLI tool designed to streamline Linux VPS deployments by orchestrating code repositories, secrets, variables, DNS, and CI/CD pipelines from multiple providers, all from a single configuration file.",
+    "main": "dist/index.js",
+    "bin": {
+      "vps-deckhand": "./dist/bin/cli.js"
+    },
+    "scripts": {
+      "start": "ts-node src/index.ts",
+      "build": "tsc --project tsconfig.build.json",
+      "dev": "ts-node bin/cli.ts",   
+      "lint": "eslint 'src/**/*.ts'",
+      "format": "prettier --write 'src/**/*.ts'",
+      "prepare": "yarn build"
+    },
+    "keywords": ["cli", "typescript"],
+    "author": "Carlos Gonzalez | Terafl",
+    "license": "MIT",
+    "devDependencies": {
+      "@types/node": "^20.0.0",
+      "eslint": "^9.17.0",
+      "eslint-config-prettier": "^8.0.0",
+      "eslint-plugin-import": "^2.0.0",
+      "prettier": "^3.0.0",
+      "ts-node": "^10.0.0",
+      "typescript": "^5.7.2"
+    },
+    "dependencies": {
+      "commander": "^10.0.0"
+    }
+  }
+  
