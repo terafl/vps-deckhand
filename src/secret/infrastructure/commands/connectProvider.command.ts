@@ -1,6 +1,7 @@
 import { GithubTokenValueObject } from '@/secret/domain/valueObjects/githubToken.valueObject';
 import { Command } from 'commander';
 import inquirer from 'inquirer';
+import { tokenStore } from '@/secret/infrastructure/secure-stores/githubTokenStore.entity';
 
 export const connectProviderCommand = new Command('connect-provider')
   .description('Connect a secrets provider')
@@ -18,6 +19,8 @@ export const connectProviderCommand = new Command('connect-provider')
           },
         },
       ]);
+
+      tokenStore.setToken('github', answers.token);
 
       console.log(`GitHub connected successfully with token: ${answers.token}`);
     } else {
