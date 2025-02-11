@@ -18,3 +18,22 @@ class TokenStore {
 
 const tokenStore = new TokenStore();
 export { tokenStore };
+// class TokenStore {
+//   private tokens: Record<string, string> = {}; // Almacena los tokens por proveedor
+
+//   setToken(provider: string, token: string): void {
+//     this.tokens[provider] = token;
+//   }
+
+//   getToken(provider: string): string | null {
+//     return this.tokens[provider] || null;
+//   }
+
+//   deleteToken(provider: string): void {
+//     delete this.tokens[provider];
+//   }
+// }
+
+// // Instancia única del TokenStore
+// const tokenStore = new TokenStore();
+// export { tokenStore };
