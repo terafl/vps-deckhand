@@ -1,16 +1,17 @@
 {
-    "compilerOptions": {
-      "resolveJsonModule": true,
-      "esModuleInterop": true,
-      "target": "ESNext",
-      "module": "CommonJS",
-      "strict": true,
-      "outDir": "./dist",
-      "rootDir": "./src",
-      "baseUrl": "./",
-      "paths": {
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "baseUrl": "./",
+    "paths": {
       "@/*": ["src/*"]
-    },
     }
-  }
-  
+  },
+  "include": ["src/**/*", "bin/**/*"],
+  "exclude": ["node_modules"]
+}

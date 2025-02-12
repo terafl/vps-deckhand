@@ -1,19 +1,16 @@
 #!/usr/bin/env node
 
+import 'tsconfig-paths/register';
+
 import { program } from 'commander';
 import { version } from '../package.json';
-import { run } from '../src/index';
+import { secretCommand } from '../src/secret/infrastructure/commands/secret.command';
 
 program
   .name('vps-deckhand')
-  .description('vps-deckhand is a simple CLI tool designed to streamline Linux VPS deployments by orchestrating code repositories, secrets, variables, DNS, and CI/CD pipelines from multiple providers, all from a single configuration file.')
+  .description('vps-deckhand is a simple CLI tool designed to streamline Linux VPS deployments...')
   .version(version);
 
-program
-  .command('run')
-  .description('Execute the CLI')
-  .action(() => {
-    run();
-  });
+program.addCommand(secretCommand);
 
 program.parse(process.argv);
